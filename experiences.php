@@ -9,7 +9,7 @@
     </head>
     <body>
         <div style="margin-left:240px; padding:20px;">
-            <h1>Contact</h1>
+            <h1>Experiences</h1>
             <p>This is the home page content.</p>
         </div>
     </body>
