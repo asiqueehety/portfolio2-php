@@ -1,0 +1,63 @@
+body { 
+    font-family: 'font2', sans-serif; 
+    background: #f4f4f4; 
+}
+
+.container { 
+    max-width: 600px; 
+    margin: 50px auto; 
+    background: #fff; 
+    padding: 30px; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+input, textarea { 
+    width: 100%; 
+    padding: 10px; 
+    margin: 10px 0; 
+    border-radius: 5px; 
+    border: 1px solid #ccc; 
+    box-sizing: border-box;
+}
+
+.regbutton { 
+    padding: 10px 20px; 
+    border: none; 
+    border-radius: 5px; 
+    background: #333; 
+    color: #fff; 
+    cursor: pointer; 
+}
+
+.cancelbtn {
+    padding: 10px 20px; 
+    border: none; 
+    border-radius: 5px; 
+    background: red; 
+    color: #fff; 
+    cursor: pointer; 
+}
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+button:hover {
+    background: #555;
+}
+
+.errors { 
+    color: red; 
+}
+
+.success { 
+    color: green; 
+}
+
+@font-face {
+    font-family: 'font2';
+    src: url('../resources/Exo_2/Exo2-VariableFont_wght.ttf') format('truetype');
+}
