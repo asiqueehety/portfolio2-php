@@ -160,7 +160,7 @@ if (isset($_POST['update_experience'])) {
         $stmt = $conn->prepare("UPDATE experiences SET category=?, name=?, time=?, details=?, exp_pic=? WHERE id=? AND user_id=?");
         $stmt->bind_param("ssssssi", $category, $name, $time, $details, $exp_pic, $exp_id, $user_id);
     } else {
-        $stmt = $conn->prepare("UPDATE experiences SET category=?, name=?, time=?, details=? WHERE id=? AND user_id=?");
+        $stmt = $conn->prepare("UPDATE experiences SET category=?, title=?, time=?, details=? WHERE id=? AND user_id=?");
         $stmt->bind_param("ssssii", $category, $name, $time, $details, $exp_id, $user_id);
     }
     $stmt->execute();
@@ -187,7 +187,7 @@ if (isset($_POST['add_project'])) {
     $time     = $_POST['time'] ?? '';
     $proj_pic = uploadFile('proj_pic', 'uploads/projects/');
 
-    $stmt = $conn->prepare("INSERT INTO projects (user_id, category, name, link, github, description, time, proj_pic) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+    $stmt = $conn->prepare("INSERT INTO projects (user_id, category, title, link, github, description, time, proj_pic) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
     $stmt->bind_param("isssssss", $user_id, $category, $name, $link, $github, $description, $time, $proj_pic);
     $stmt->execute();
     $stmt->close();
@@ -204,7 +204,7 @@ if (isset($_POST['update_project'])) {
     $proj_pic = uploadFile('proj_pic', 'uploads/projects/');
 
     if ($proj_pic) {
-        $stmt = $conn->prepare("UPDATE projects SET category=?, name=?, link=?, github=?, description=?, time=?, proj_pic=? WHERE id=? AND user_id=?");
+        $stmt = $conn->prepare("UPDATE projects SET category=?, title=?, link=?, github=?, description=?, time=?, proj_pic=? WHERE id=? AND user_id=?");
         $stmt->bind_param("ssssssssi", $category, $name, $link, $github, $description, $time, $proj_pic, $proj_id, $user_id);
     } else {
         $stmt = $conn->prepare("UPDATE projects SET category=?, name=?, link=?, github=?, description=?, time=? WHERE id=? AND user_id=?");
