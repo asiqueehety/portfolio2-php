@@ -1,13 +1,8 @@
 <?php
-include 'includes/navbar.php';
+include __DIR__ . '/includes/navbar.php';
 include __DIR__ . "/config/db.php";
 
-// User ID (replace with dynamic if needed)
-session_start();
-if (!isset($_SESSION['user_id'])) {
-    header("Location: login.php");
-    exit;
-}
+
 $user_id = $_SESSION['user_id'];
 // Fetch experiences from DB
 $sql = "SELECT * FROM experiences WHERE user_id = ? ORDER BY category, id";
@@ -61,11 +56,14 @@ if (empty($experiences)) {
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
 <title>Experiences - Portfolio</title>
 <link rel="stylesheet" href="assets/css/style.css">
+<script src="assets/js/script.js"></script>
 <style>
 body { font-family: 'font2', sans-serif; }
-.container { max-width: 1200px; margin: 30px auto; padding: 0 20px; }
+.container { max-width: 1200px; margin: 30px auto; padding: 0 30px;padding-left: 8vw; }
 .container h1{ background-color: #686161ff; border-radius: 10px; padding: 5px; color: white;}
 .category-title { display: inline-block; font-size: 28px; font-weight: bold; margin: 40px 0 20px 0; color: #333; border-radius: 5px 5px 4px; background-color: #d7c1ab86;}
 .experiences-row { display: flex; flex-wrap: wrap; gap: 20px; }
@@ -77,7 +75,7 @@ body { font-family: 'font2', sans-serif; }
 .exp-pic { width: 100%; max-height: 150px; object-fit: cover; border-radius: 10px; margin-bottom: 10px; }
 /* Responsive */
 @media (max-width: 992px) { .exp-box { flex: 1 1 calc(50% - 20px); } }
-@media (max-width: 600px) { .exp-box { flex: 1 1 100%; } }
+@media (max-width: 600px) { .exp-box { flex: 1 1 100%; } .container h1{ margin-left:15px; } }
 </style>
 </head>
 <body>

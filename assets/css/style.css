@@ -76,16 +76,18 @@
 }
 
 /* Admin link styling */
-.sidebar .admin-link {
+.admin-link {
   position: absolute;
-  bottom: 50px;
+  bottom: 120px;
   left: 20px;
   width: calc(100% - 40px);
+  transform: translateX(-150%);
 }
 
-.sidebar .admin-link a {
+.admin-link a {
   display: block;
   padding: 3px;
+  margin: 10px;
   text-align: center;
   background: #29293d;
   color: #fff;
@@ -186,6 +188,17 @@ section {
   }
 }
 
+  #settingsBtn{
+    padding: 8px;
+    margin: 8px;
+    border-radius: 10px;
+    position: absolute;
+    bottom:50px;
+    right: 10px;
+  }
+  #settingsBtn:hover{
+    background-color: #444;
+  }
 
 @font-face {
   font-family: 'font2';

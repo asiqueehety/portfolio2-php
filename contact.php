@@ -6,11 +6,7 @@ include __DIR__ . '/includes/navbar.php';
 include __DIR__ . '/config/db.php';
 
 // Set which user's contacts to show (make dynamic later if you have auth/session)
-session_start();
-if (!isset($_SESSION['user_id'])) {
-    header("Location: login.php");
-    exit;
-}
+
 $user_id = $_SESSION['user_id'];
 // Fallback values if DB has no contacts for this user
 $fallback = [
@@ -56,6 +52,7 @@ $cards = [
 <title>Contact</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link rel="stylesheet" href="assets/css/style.css" />
+<script src="assets/js/script.js"></script>
 <style>
   body { font-family: 'font2', sans-serif; background: #f4f6f8; margin: 0; }
   .container { max-width: 1200px; margin: 30px auto; padding: 0 20px; }
@@ -107,6 +104,7 @@ $cards = [
   @media (max-width: 640px) {
     .contact-grid { grid-template-columns: 1fr; }
     .form-row { grid-template-columns: 1fr; }
+    .container h1{ margin-left:15px; }
   }
 </style>
 </head>

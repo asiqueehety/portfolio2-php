@@ -3,7 +3,14 @@
 
 include __DIR__ . "/../config/db.php";
 
-$user_id = 1; // or get from session
+session_start();
+
+// Get user ID from session
+if (!isset($_SESSION['user_id'])) {
+    $user_id = null; // fallback if not logged in
+} else {
+    $user_id = $_SESSION['user_id'];
+}
 
 $stmt = $conn->prepare("SELECT username FROM users WHERE id = ?");
 $stmt->bind_param("i", $user_id);
@@ -29,6 +36,10 @@ $stmt->close();
     </ul>
     <div class="admin-link">
         <a href="login.php">Admin Login / Register</a>
+        <a href="dashboard.php">Modify</a>
     </div>
+    <img id="settingsBtn" onclick="toggleSettings()" src="assets/images/icons/settings.svg"/>
+    
+    
     <div class="menu-toggle" onclick="toggleMenu()">☰</div>
 </nav>

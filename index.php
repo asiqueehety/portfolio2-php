@@ -1,12 +1,7 @@
 <?php 
-include('includes/navbar.php'); 
+include __DIR__ . '/includes/navbar.php';
 include __DIR__ . "/config/db.php"; 
 
-session_start();
-if (!isset($_SESSION['user_id'])) {
-    header("Location: login.php");
-    exit;
-}
 $user_id = $_SESSION['user_id'];
 // Fetch user info
 $sqlUser = "SELECT username, pro_pic, intro, bio, education FROM users WHERE id = ?";
@@ -71,6 +66,7 @@ if (empty($skills)) {
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title><?php echo htmlspecialchars($username); ?>'s Portfolio</title>
   <link rel="stylesheet" href="assets/css/style.css">
   <script src="assets/js/script.js" defer></script>

@@ -1,13 +1,7 @@
 <?php
-include 'includes/navbar.php';
+include __DIR__ . '/includes/navbar.php';
 include __DIR__ . "/config/db.php";
 
-// User ID (replace with dynamic if needed)
-session_start();
-if (!isset($_SESSION['user_id'])) {
-    header("Location: login.php");
-    exit;
-}
 $user_id = $_SESSION['user_id'];
 
 
@@ -30,7 +24,7 @@ if (empty($projects)) {
         "Web Development" => [
             [
                 "title" => "Portfolio Website builder template",
-                "time" => "2024",
+                "time" => "2025",
                 "description" => "Built a responsive personal portfolio builder website using HTML, CSS, JS, and PHP, MySQL.",
                 "link" => "https://example.com/portfolio",
                 "github" => "https://github.com/asiqueehety/portfolio2-php",
@@ -79,11 +73,13 @@ if (empty($projects)) {
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Projects - Portfolio</title>
 <link rel="stylesheet" href="assets/css/style.css">
+<script src="assets/js/script.js"></script>
 <style>
 body { font-family: 'font2', sans-serif; }
-.container { max-width: 1200px; margin: 30px auto; padding: 0 20px; }
+.container { max-width: 1200px; margin: 30px auto; padding: 0 30px;padding-left: 8vw; }
 .container h1{ background-color: #2a1eaca6; border-radius: 10px; padding: 5px; color: white; }
 .category-title { display: inline-block; font-size: 28px; font-weight: bold; margin: 40px 0 20px 0; color: #333; border-radius: 5px 5px 4px 4px; background-color: #d7c1ab86; padding: 5px 15px; }
 .projects-row { display: flex; flex-wrap: wrap; gap: 20px; }
@@ -97,7 +93,7 @@ body { font-family: 'font2', sans-serif; }
 .proj-links a:hover { background: #555; }
 /* Responsive */
 @media (max-width: 992px) { .proj-box { flex: 1 1 calc(50% - 20px); } }
-@media (max-width: 600px) { .proj-box { flex: 1 1 100%; } }
+@media (max-width: 600px) { .proj-box { flex: 1 1 100%; } .container h1{ margin-left:15px; } }
 </style>
 </head>
 <body>
