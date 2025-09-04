@@ -3,7 +3,7 @@ include __DIR__ . '/includes/navbar.php';
 include __DIR__ . "/config/db.php";
 
 
-$user_id = $_SESSION['user_id'];
+$user_id = $_SESSION['user_id']?? 1; // fallback if not logged in
 // Fetch experiences from DB
 $sql = "SELECT * FROM experiences WHERE user_id = ? ORDER BY category, id";
 $stmt = $conn->prepare($sql);

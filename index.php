@@ -1,8 +1,7 @@
 <?php 
 include __DIR__ . '/includes/navbar.php';
-include __DIR__ . "/config/db.php"; 
-
-$user_id = $_SESSION['user_id'];
+include __DIR__ . "/config/db.php";
+$user_id = $_SESSION['user_id']?? 1; // fallback if not logged in
 // Fetch user info
 $sqlUser = "SELECT username, pro_pic, intro, bio, education FROM users WHERE id = ?";
 $stmtUser = $conn->prepare($sqlUser);

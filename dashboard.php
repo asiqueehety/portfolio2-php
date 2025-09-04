@@ -231,7 +231,7 @@ if (isset($_POST['update_contact'])) {
     $linkedin = $_POST['linkedin'] ?? '';
     $github = $_POST['github'] ?? '';
 
-    $stmt = $conn->prepare("UPDATE contact SET phone=?, email=?, linkedin=?, github=? WHERE user_id=?");
+    $stmt = $conn->prepare("UPDATE contacts SET phone=?, email=?, linkedin=?, github=? WHERE user_id=?");
     $stmt->bind_param("ssssi", $phone, $email, $linkedin, $github, $user_id);
     $stmt->execute();
     $stmt->close();
@@ -410,6 +410,7 @@ if (isset($_POST['update_contact'])) {
     </div>
 
     <div><a href="index.php">Return to Home</a></div>
+    
 
 </div>
 </body>

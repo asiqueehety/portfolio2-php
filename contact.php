@@ -7,7 +7,7 @@ include __DIR__ . '/config/db.php';
 
 // Set which user's contacts to show (make dynamic later if you have auth/session)
 
-$user_id = $_SESSION['user_id'];
+$user_id = $_SESSION['user_id']?? 1; // fallback if not logged in
 // Fallback values if DB has no contacts for this user
 $fallback = [
     'phone'    => '+880 1896-121096',

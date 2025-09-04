@@ -4,10 +4,9 @@
 include __DIR__ . "/../config/db.php";
 
 session_start();
-
 // Get user ID from session
 if (!isset($_SESSION['user_id'])) {
-    $user_id = null; // fallback if not logged in
+    $user_id = 1; // fallback if not logged in
 } else {
     $user_id = $_SESSION['user_id'];
 }
