@@ -79,7 +79,7 @@ if (empty($projects)) {
 <script src="assets/js/script.js"></script>
 <style>
 body { font-family: 'font2', sans-serif; }
-.container { max-width: 1200px; margin: 30px auto; padding: 0 30px;padding-left: 8vw; }
+.container { max-width: 1200px; margin: 30px auto; padding: 0 30px; }
 .container h1{ background-color: #2a1eaca6; border-radius: 10px; padding: 5px; color: white; }
 .category-title { display: inline-block; font-size: 28px; font-weight: bold; margin: 40px 0 20px 0; color: #333; border-radius: 5px 5px 4px 4px; background-color: #d7c1ab86; padding: 5px 15px; }
 .projects-row { display: flex; flex-wrap: wrap; gap: 20px; }
@@ -93,10 +93,11 @@ body { font-family: 'font2', sans-serif; }
 .proj-links a:hover { background: #555; }
 /* Responsive */
 @media (max-width: 992px) { .proj-box { flex: 1 1 calc(50% - 20px); } }
-@media (max-width: 600px) { .proj-box { flex: 1 1 100%; } .container h1{ margin-left:15px; } }
+@media (max-width: 768px) { .proj-box { flex: 1 1 100%; } }
 </style>
 </head>
 <body>
+<div class="main-content">
 <div class="container">
     <h1>Projects</h1>
 
@@ -125,6 +126,7 @@ body { font-family: 'font2', sans-serif; }
             </div>
         </div>
     <?php endforeach; ?>
+</div>
 </div>
 </body>
 </html>

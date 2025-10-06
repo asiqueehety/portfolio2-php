@@ -63,7 +63,7 @@ if (empty($experiences)) {
 <script src="assets/js/script.js"></script>
 <style>
 body { font-family: 'font2', sans-serif; }
-.container { max-width: 1200px; margin: 30px auto; padding: 0 30px;padding-left: 8vw; }
+.container { max-width: 1200px; margin: 30px auto; padding: 0 30px; }
 .container h1{ background-color: #686161ff; border-radius: 10px; padding: 5px; color: white;}
 .category-title { display: inline-block; font-size: 28px; font-weight: bold; margin: 40px 0 20px 0; color: #333; border-radius: 5px 5px 4px; background-color: #d7c1ab86;}
 .experiences-row { display: flex; flex-wrap: wrap; gap: 20px; }
@@ -75,10 +75,11 @@ body { font-family: 'font2', sans-serif; }
 .exp-pic { width: 100%; max-height: 150px; object-fit: cover; border-radius: 10px; margin-bottom: 10px; }
 /* Responsive */
 @media (max-width: 992px) { .exp-box { flex: 1 1 calc(50% - 20px); } }
-@media (max-width: 600px) { .exp-box { flex: 1 1 100%; } .container h1{ margin-left:15px; } }
+@media (max-width: 768px) { .exp-box { flex: 1 1 100%; } }
 </style>
 </head>
 <body>
+<div class="main-content">
 <div class="container">
     <h1>Experiences</h1>
 
@@ -99,6 +100,7 @@ body { font-family: 'font2', sans-serif; }
             </div>
         </div>
     <?php endforeach; ?>
+</div>
 </div>
 </body>
 </html>
